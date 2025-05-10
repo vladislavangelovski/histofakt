@@ -1,0 +1,18 @@
+version: "3.9"
+
+services:
+  db:
+    image: postgres:15
+    container_name: histofakt-db
+    restart: unless-stopped
+
+    environment:
+      POSTGRES_USER: histo
+      POSTGRES_PASSWORD: histo
+      POSTGRES_DB: histofakt
+
+    ports:
+      - "5432:5432"
+
+    volumes:
+      - ./db-data:/var/lib/postgresql/data
