@@ -1,5 +1,6 @@
 from sqlmodel import SQLModel, Field, create_engine
 
+
 class Fact(SQLModel, table=True):
     id: int | None = Field(
         default=None,
